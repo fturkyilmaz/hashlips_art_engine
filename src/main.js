@@ -345,6 +345,14 @@ const startCreating = async () => {
   debugLogs
     ? console.log("Editions left to create: ", abstractedIndexes)
     : null;
+
+  console.log(
+    "TEST",
+    layerConfigIndex,
+    layerConfigurations.length,
+    layerConfigIndex < layerConfigurations.length
+  );
+
   while (layerConfigIndex < layerConfigurations.length) {
     const layers = layersSetup(
       layerConfigurations[layerConfigIndex].layersOrder

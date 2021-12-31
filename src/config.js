@@ -5,9 +5,11 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "MY_COLLECTION";
+
+const description = "My first NFT collection";
+
+const baseUri = "ipfs://QmTNAg2VoBfpMqfKHe6ZEq3jSrHbMhVcB2EL1HmDK8YiHm";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -15,16 +17,16 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
       share: 100,
     },
   ],
 };
 
-// If you have selected Solana then the collection starts from 0 automatically
+// Dinamik rastgale resim oluşturma ayarları
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: "Background" },
       { name: "Eyeball" },
@@ -35,11 +37,23 @@ const layerConfigurations = [
       { name: "Top lid" },
     ],
   },
+  {
+    growEditionSizeTo: 40,
+    layersOrder: [
+      { name: "Background" },
+      { name: "Bottom lid" },
+      { name: "Face" },
+      // { name: "Eye color" },
+      // { name: "Iris" },
+      { name: "Shine" },
+      // { name: "Top lid" },
+    ],
+  },
 ];
 
 const shuffleLayerConfigurations = false;
 
-const debugLogs = false;
+const debugLogs = true;
 
 const format = {
   width: 512,
